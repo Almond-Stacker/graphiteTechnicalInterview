@@ -1,26 +1,17 @@
 import RideShareOptimizer 
+import RideShareOptimizerAdvanced
 
 # Sample usage and testing
 if __name__ == "__main__":
-    optimizer = RideShareOptimizer.RidePricingOptimizer()
+    optimizer = RideShareOptimizerAdvanced.RidePricingOptimizer()
     
     # Sample demand pattern: morning, lunch, evening, night
-    base_demands = [30, 20, 50, 25]  # Small example for testing
-    
-    # print(f"Base demands: {base_demands}")
-    # print(f"Available prices: {optimizer.price_options}")
-    # print(f"Cost per ride: ${optimizer.cost_per_ride}\n")
-    
-    # Test simulation
-    # test_prices = [8, 10, 12, 8]
-    # test_profit = optimizer.simulate_day(base_demands, test_prices)
-    # print(f"Test prices {test_prices} -> Profit: ${test_profit:.2f}\n")
-    
+    demand_data = {
+        8:  {"demand": 40, "drivers": 30, "spillover_rate": 0.05},
+        9:  {"demand": 55, "drivers": 35, "spillover_rate": 0.05},
+        10: {"demand": 70, "drivers": 45, "spillover_rate": 0.10},
+        11: {"demand": 90, "drivers": 50, "spillover_rate": 0.10},
+    }
+
     # Run your optimization
-    prices = optimizer.optimize_prices(base_demands)
-    results = optimizer.simulate_day(base_demands, prices)
-    
-    # for algorithm, result in results.items():
-    #     print(f"{algorithm}:")
-    print(f"  Prices: {prices}")
-    print(f"  Profit: {results}")
+    optimizer.compareAlgorithms(demand_data)

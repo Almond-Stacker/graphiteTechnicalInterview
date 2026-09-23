@@ -29,3 +29,16 @@ First Steps
         Incorporate external factors
         Include more pricing points
         Validate data 
+
+    
+    Added dynamic pricer but ran into problem with data 
+    Trying to fix data available
+    Data is too limited, optimized for data available but for stronger model need to structure data better
+    
+    Finished revised data 
+    Couple problems
+        Trip is set cost different distances should affect it
+        Driver availability needs to be accounted for 
+        Better data needs to be acquired 
+        Spill over still not optimal 
+        Heavily Computational 
