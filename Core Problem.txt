@@ -1,0 +1,31 @@
+Core Problem
+Higher prices = more spill over to next period 
+    Customers wait in order to get cheaper price 
+    Note: Spill over at end of day means that riders do not get to pay 
+
+Task:
+    Implement optimization algorithm that accounts for demand patterns
+    Maximize daily profit and account for spill over 
+
+Things needed to be tracked
+    Base demand
+    Customers deferred 
+    Total Customers
+    Total demand
+    Prices 
+    Profit generated 
+    Spill Over Rate  
+
+First Steps
+    Step up simple optimizer then account for more factors
+    By 30 minutes - Created greedy function 
+        Does not account for spill over 
+    
+    By 50 minutes - Created Brute Force optimizer
+
+    TODO:
+        Set up dynamic pricing / programming
+        Begin logging data to track time complexity and how good it is a optimizing
+        Incorporate external factors
+        Include more pricing points
+        Validate data 
