@@ -1,17 +1,19 @@
-import RideShareOptimizer 
-import RideShareOptimizerAdvanced
+from Analysis import PricingAnalysis
 
-# Sample usage and testing
+
+def main():
+    analysis = PricingAnalysis()
+
+    results = analysis.compare_pricers()
+
+    print("\n--- Pricing Comparison ---")
+
+    for method, result in results.items():
+        print(f"\n{method}")
+        print("Price per mile:", result["price"])
+        print("Profit:", result["profit"])
+        print("Spillover:", result["spillover"])
+
+
 if __name__ == "__main__":
-    optimizer = RideShareOptimizerAdvanced.RidePricingOptimizer()
-    
-    # Sample demand pattern: morning, lunch, evening, night
-    demand_data = {
-        8:  {"demand": 40, "drivers": 30, "spillover_rate": 0.05},
-        9:  {"demand": 55, "drivers": 35, "spillover_rate": 0.05},
-        10: {"demand": 70, "drivers": 45, "spillover_rate": 0.10},
-        11: {"demand": 90, "drivers": 50, "spillover_rate": 0.10},
-    }
-
-    # Run your optimization
-    optimizer.compareAlgorithms(demand_data)
+    main()

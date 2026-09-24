@@ -3,7 +3,7 @@ import itertools
 class RidePricingOptimizer:
     def __init__(self):
         self.cost_per_ride = 3.0
-        self.price_options = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21]  
+        self.price_options = [x for x in range(30)]  
         self.time_spillover_factor = {
             0: 0.3, 1: 0.3, 2: 0.3, 3: 0.3,
             4: 0.3, 5: 0.4, 6: 0.6, 7: 0.8,
@@ -23,10 +23,12 @@ class RidePricingOptimizer:
         performance["Greedy Optimizer"] = greedy_prices
 
         # Brute force optimizer
+        # Computationally heavy 
         brute_force_prices = self.brute_force_optimzier(demand_data)
         performance["Brute Force Optimizer"] = brute_force_prices
 
         # Dynamic optimizer
+        # Reaches local minimum basically get stuck 
         dynamic_prices = self.dynamic_optimizer(demand_data)
         performance["Dynamic Optimizer"] = dynamic_prices
 
@@ -82,7 +84,7 @@ class RidePricingOptimizer:
     # Gets stuck in a local minimum
     def dynamic_optimizer(self, demand_data):
         prices = [10] * len(demand_data)
-        step = 0.1
+        step = 0.5
 
         while True:
             improved = False
@@ -164,3 +166,4 @@ class RidePricingOptimizer:
         customers = total_demand - spillover
 
         return customers, spillover
+    
